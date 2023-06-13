@@ -1,21 +1,30 @@
-import { useEffect } from "react";
 import "./App.css";
-import { getBooks } from "./config/axios/getBooks";
-import { Table } from "./components";
-import {
-  arrayOfInternationalAuthors,
-  arrayOfPolishAuthors,
-} from "./utils/arrayOfAuthors";
+
+import { Route, Routes } from "react-router-dom";
+import { AuthorsBooks, HomePage, NotFoundPage } from "./pages";
+import { arrayOfPolishAuthors } from "./utils/arrayOdPolishAuthors";
+import { arrayOfInternationalAuthors } from "./utils/arrayOfInternationalAuthors";
 
 function App() {
-  useEffect(() => {
-    getBooks();
-  }, []);
   return (
-    <>
-      <Table authors={arrayOfPolishAuthors} />
-      <Table authors={arrayOfInternationalAuthors} />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      {arrayOfPolishAuthors.map((author) => (
+        <Route
+          key={author.id}
+          path={`${author.name}${author.surname}`}
+          element={<AuthorsBooks name={author.name} surname={author.surname} />}
+        />
+      ))}
+      {arrayOfInternationalAuthors.map((author) => (
+        <Route
+          key={author.id}
+          path={`${author.name}${author.surname}`}
+          element={<AuthorsBooks name={author.name} surname={author.surname} />}
+        />
+      ))}
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
 

@@ -1,1 +1,5 @@
-export type ArrayOfAutorsProps = { name: string; surname: string }[];
+export type ArrayOfAutorsProps = {
+  id: string;
+  name: string;
+  surname: string;
+}[];
