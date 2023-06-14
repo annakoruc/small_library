@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { AuthorProps, BooksProps } from "../../types";
+import { BooksProps } from "../../types";
 
 type StateProps = {
   loading: boolean;
@@ -11,8 +11,7 @@ const initialState: StateProps = { loading: false, books: [] };
 
 export const getDataFromApi = createAsyncThunk(
   "api/getBooks",
-  async ({ name, surname }: AuthorProps) => {
-    const author = `${name}+${surname}`;
+  async (author: string) => {
     const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:"${author}"&maxResults=40`;
 
     const res = await axios.get(url).then((res) => {
