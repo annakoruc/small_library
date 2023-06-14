@@ -1,14 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { BreadCrumbs } from "../../components";
 
 export const RootLayout = () => {
   return (
     <div>
       <header>
         <h1>Small Library</h1>
-        <nav>
-          <NavLink to="polish-authors">Polish</NavLink>
-          <NavLink to="international-authors">International</NavLink>
-        </nav>
+        <BreadCrumbs />
       </header>
       <main>
         <Outlet />
