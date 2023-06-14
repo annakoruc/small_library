@@ -15,7 +15,7 @@ export const AuthorsBooks = () => {
 
   useEffect(() => {
     dispatch(getDataFromApi(id!));
-  }, [id]);
+  }, [id, dispatch]);
 
   const setIsOpen = () => {
     setIsOpenDescription(!isOpenDescription);
@@ -29,26 +29,29 @@ export const AuthorsBooks = () => {
       <table>
         <thead>
           <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>surname</th>
+            <th>title</th>
+            <th>authors</th>
+            <th>pageCount</th>
+            <th>publishedDate</th>
           </tr>
         </thead>
-        {books.map((book) => (
-          <tr key={book.id} onClick={setIsOpen}>
-            <td>{book.title}</td>
-            <td>{book.authors}</td>
-            <td>{book.pageCount}</td>
-            <td>{book.publishedDate}</td>
-
+        <tbody>
+          {books.map((book) => (
+            <tr key={book.id} onClick={setIsOpen}>
+              <td>{book.title}</td>
+              <td>{book.authors}</td>
+              <td>{book.pageCount}</td>
+              <td>{book.publishedDate}</td>
+              {/* 
             {isOpenDescription && (
-              <td>
+              <div>
                 <p>{book.description}</p>
                 <a href={book.link}>link</a>
-              </td>
-            )}
-          </tr>
-        ))}
+              </div>
+            )} */}
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

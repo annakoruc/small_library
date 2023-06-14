@@ -8,12 +8,17 @@ body {
 table {
   width: 100%;
   border: 1px solid red;
+}
 
-  tr:hover {
-    color: red;
-  }
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-  tr:focus {
-    color: blue;
-  }
+tr:hover {
+  color: red;
+}
+
+tr:focus {
+  color: blue;
 }
