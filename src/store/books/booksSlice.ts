@@ -11,7 +11,7 @@ const initialState: StateProps = { loading: false, books: [] };
 
 export const getDataFromApi = createAsyncThunk(
   "api/getBooks",
-  async (author: string) => {
+  async (author: string | undefined) => {
     const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:"${author}"&maxResults=40`;
 
     const res = await axios.get(url).then((res) => {
