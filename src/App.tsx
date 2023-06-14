@@ -1,29 +1,31 @@
 import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
-import { AuthorsBooks, HomePage, NotFoundPage } from "./pages";
-import { arrayOfPolishAuthors } from "./utils/arrayOdPolishAuthors";
-import { arrayOfInternationalAuthors } from "./utils/arrayOfInternationalAuthors";
+import {
+  AuthorsBooks,
+  HomePage,
+  InternationalAuthors,
+  NotFoundPage,
+  PolishAuthors,
+} from "./pages";
+import { RootLayout, TableLayouts } from "./pages/layouts";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      {arrayOfPolishAuthors.map((author) => (
-        <Route
-          key={author.id}
-          path={`${author.name}${author.surname}`}
-          element={<AuthorsBooks name={author.name} surname={author.surname} />}
-        />
-      ))}
-      {arrayOfInternationalAuthors.map((author) => (
-        <Route
-          key={author.id}
-          path={`${author.name}${author.surname}`}
-          element={<AuthorsBooks name={author.name} surname={author.surname} />}
-        />
-      ))}
-      <Route path="*" element={<NotFoundPage />} />
+      <Route path="/" element={<RootLayout />}>
+        //TODO add something to homepage
+        <Route index element={<HomePage />} />
+        <Route path="polish-authors" element={<TableLayouts />}>
+          <Route index element={<PolishAuthors />} />
+          <Route path=":id" element={<AuthorsBooks />} />
+        </Route>
+        <Route path="international-authors" element={<TableLayouts />}>
+          <Route index element={<InternationalAuthors />} />
+          <Route path=":id" element={<AuthorsBooks />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
     </Routes>
   );
 }

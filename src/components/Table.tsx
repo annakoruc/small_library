@@ -13,19 +13,19 @@ export const Table = ({ authors }: { authors: ArrayOfAutorsProps }) => {
           <th>surname</th>
         </tr>
       </thead>
-      {authors.map((author) => (
-        <tbody key={author.id}>
+      <tbody>
+        {authors.map((author) => (
           <tr
+            key={author.id}
             onClick={() => {
-              navigate(`${author.name}${author.surname}`);
+              navigate(`${author.name}+${author.surname}`);
             }}
           >
-            <td>{author.id}</td>
             <td>{author.name}</td>
             <td>{author.surname}</td>
           </tr>
-        </tbody>
-      ))}
+        ))}
+      </tbody>
     </table>
   );
 };
