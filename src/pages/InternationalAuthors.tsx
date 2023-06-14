@@ -1,10 +1,10 @@
-import { Table } from "../components";
+import { TableWithAuthors } from "../components";
 import { arrayOfInternationalAuthors } from "../utils/arrayOfInternationalAuthors";
 
 export const InternationalAuthors = () => {
   return (
     <div>
-      <Table authors={arrayOfInternationalAuthors} />
+      <TableWithAuthors authors={arrayOfInternationalAuthors} />
     </div>
   );
 };

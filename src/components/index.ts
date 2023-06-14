@@ -1,1 +1,2 @@
-export * from "./Table";
+export * from "./TableWithAuthors";
+export * from "./TableWithBooks";
