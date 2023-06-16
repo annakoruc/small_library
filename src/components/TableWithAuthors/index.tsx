@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ArrayOfAutorsProps } from "../types/ArrayOfAutorsProps";
+import { ArrayOfAutorsProps } from "../../types/ArrayOfAutorsProps";
 
 export const TableWithAuthors = ({
   authors,

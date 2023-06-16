@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { BookProps } from "../../types";
 
 //TODO add type for book !
 
-export const TableRow = ({ book }) => {
+export const TableRow = ({ book }: { book: BookProps }) => {
   const [isOpenDescription, setIsOpenDescription] = useState(false);
 
   const setIsOpen = () => {
@@ -15,9 +16,9 @@ export const TableRow = ({ book }) => {
         <td>
           <b>{book.title}</b>
         </td>
-        <td>{book.authors}</td>
-        <td>{book.subtitle}</td>
+
         <td>{book.pageCount}</td>
+        <td>{book.language}</td>
         <td>{book.publishedDate}</td>
       </tr>
       {isOpenDescription && (

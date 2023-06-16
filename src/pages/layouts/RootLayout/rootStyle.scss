@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.root_header {
+  background-color: $c-white;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.21);
+  height: 100px;
+
+  .header_content {
+    @include desktop_screen_margin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main {
+  @include desktop_screen_margin;
+  padding: 32px;
+}

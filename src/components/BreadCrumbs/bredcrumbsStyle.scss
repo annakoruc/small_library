@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: $c-black;
+
+  a:visited {
+    color: $c-black;
+  }
+
+  .home {
+    @include flex_row_all_center;
+    text-decoration: none;
+
+    &::after {
+      content: ">";
+      margin-left: 10px;
+    }
+  }
+
+  .crumb {
+    text-decoration: none;
+    &::after {
+      content: ">";
+      margin-left: 10px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &:last-child {
+      color: $c-green-default;
+      font-weight: $f-bold-weight;
+    }
+  }
+}
