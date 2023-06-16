@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=News+Cycle:wght@400;700&display=swap");
+
+/// colors
+$c-white: #ffffff;
+$c-black: #1b0b19;
+$c-green-light: #effcf6;
+$c-green-default: #52d87e;
+$c-green-dark: #067e2e;
+
+// fonts
+$f-font-family: News Cycle;
+$f-font-logo: Inter;
+$f-defautl-weight: 400;
+$f-bold-weight: 700;
+
+@mixin author_title {
+  font-weight: $f-bold-weight;
+  font-size: 30px;
+}
+
+//margins
+
+$m-big: 120px;
+$m-medium: 32px;
+$m-small: 16;
+
+@mixin desktop_screen_margin {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+@mixin flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex_row_all_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

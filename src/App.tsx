@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Route, Routes } from "react-router-dom";
 import {
   AuthorsBooks,
@@ -9,6 +7,8 @@ import {
   PolishAuthors,
 } from "./pages";
 import { RootLayout, TableLayouts } from "./pages/layouts";
+
+import "./styles/global.scss";
 
 function App() {
   return (

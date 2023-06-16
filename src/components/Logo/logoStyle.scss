@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.logo {
+  font-size: 30px;
+  font-family: $f-font-logo;
+
+  .library {
+    font-size: 40px;
+    color: $c-green-default;
+  }
+}
