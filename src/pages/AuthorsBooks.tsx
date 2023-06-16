@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import { getDataFromApi } from "../store/books/booksSlice";
 import { useParams } from "react-router-dom";
+import { TableRow } from "../components/TableRow";
 
 export const AuthorsBooks = () => {
-  const [isOpenDescription, setIsOpenDescription] = useState(false);
   const { books, loading } = useSelector((state: RootState) => {
     return state.books;
   });
@@ -18,10 +18,6 @@ export const AuthorsBooks = () => {
   useEffect(() => {
     dispatch(getDataFromApi(id));
   }, [dispatch, id]);
-
-  const setIsOpen = () => {
-    setIsOpenDescription(!isOpenDescription);
-  };
 
   return (
     <>
@@ -38,16 +34,9 @@ export const AuthorsBooks = () => {
               <th>publishedDate</th>
             </tr>
           </thead>
-          <tbody>
-            {books.map((book) => (
-              <tr key={book.id} onClick={setIsOpen}>
-                <td>{book.title}</td>
-                <td>{book.authors}</td>
-                <td>{book.pageCount}</td>
-                <td>{book.publishedDate}</td>
-              </tr>
-            ))}
-          </tbody>
+          {books.map((book) => (
+            <TableRow book={book} />
+          ))}
         </table>
       )}
     </>
