@@ -15,4 +15,5 @@
 
 .main {
   @include desktop_screen_margin;
+  padding: 32px;
 }

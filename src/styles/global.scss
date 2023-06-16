@@ -7,26 +7,4 @@ body {
   width: 100vw;
   font-family: $f-font-family;
   color: $c-black;
-
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-}
-
-table {
-  width: 100%;
-  border: 1px solid red;
-}
-
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-tr:hover {
-  color: red;
-}
-
-tr:focus {
-  color: blue;
 }

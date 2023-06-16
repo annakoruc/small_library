@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import homeIcon from "../../../public/icon-home.svg";
+import homeIcon from "../../assets/icon-home.svg";
 
 import "./bredcrumbsStyle.scss";
 

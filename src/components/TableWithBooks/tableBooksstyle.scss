@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.table_books {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $c-green-default;
+  border-collapse: collapse;
+
+  thead {
+    height: 50px;
+    background-color: $c-green-default;
+
+    color: $c-white;
+    text-align: right;
+    margin: 32px;
+    font-size: 18px;
+  }
+
+  tbody {
+    &:nth-child(odd) {
+      background: $c-light-gray;
+    }
+  }
+
+  tr {
+    height: 50px;
+    text-align: right;
+
+    td,
+    th {
+      padding: 0 32px;
+
+      &:first-child {
+        text-align: left;
+        padding: 0 60px;
+        width: 70%;
+      }
+    }
+  }
+}
