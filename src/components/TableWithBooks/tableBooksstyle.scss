@@ -16,25 +16,7 @@
     font-size: 18px;
   }
 
-  tbody {
-    &:nth-child(odd) {
-      background: $c-light-gray;
-    }
-  }
-
-  tr {
-    height: 50px;
-    text-align: right;
-
-    td,
-    th {
-      padding: 0 32px;
-
-      &:first-child {
-        text-align: left;
-        padding: 0 60px;
-        width: 70%;
-      }
-    }
+  .hearder_row {
+    @include row_style;
   }
 }

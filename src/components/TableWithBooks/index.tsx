@@ -7,15 +7,15 @@ export const TableWithBooks = ({ books }: { books: BooksListProps }) => {
   return (
     <table className="table_books">
       <thead>
-        <tr>
-          <th className="head_title">Title</th>
+        <tr className="hearder_row">
+          <th>Title</th>
           <th>Pages</th>
           <th>Language</th>
           <th>Published</th>
         </tr>
       </thead>
       {books.map((book) => (
-        <TableRow book={book} />
+        <TableRow book={book} key={book.id} />
       ))}
     </table>
   );

@@ -24,7 +24,7 @@ $f-bold-weight: 700;
 
 $m-big: 120px;
 $m-medium: 32px;
-$m-small: 16;
+$m-small: 16px;
 
 @mixin desktop_screen_margin {
   max-width: 1440px;
@@ -41,4 +41,20 @@ $m-small: 16;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin row_style {
+  height: 50px;
+  text-align: right;
+
+  td,
+  th {
+    padding: 0 32px;
+
+    &:first-child {
+      text-align: left;
+      padding: 0 60px;
+      width: 70%;
+    }
+  }
 }

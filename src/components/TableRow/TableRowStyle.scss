@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+tbody {
+  .arrow {
+    position: absolute;
+    padding-left: 32px;
+    padding-top: 12px;
+  }
+
+  .opened_arrow {
+    transform: rotate(180deg);
+    position: absolute;
+    padding-right: 32px;
+    padding-bottom: 16px;
+  }
+
+  .book_row {
+    @include row_style;
+  }
+}
+
+.closed_row {
+  border: none;
+
+  &:nth-child(odd) {
+    background-color: $c-light-gray;
+  }
+}
+
+.opened_row {
+  background-color: $c-green-light;
+
+  b {
+    color: $c-green-dark;
+  }
+
+  .hidden_row {
+    @include flex_column;
+    padding: 0 32px 32px 64px;
+    text-align: justify;
+
+    span {
+      font-weight: $f-bold-weight;
+    }
+  }
+}
