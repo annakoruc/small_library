@@ -56,6 +56,13 @@ $m-small: 16px;
       padding: 0 60px;
       width: 70%;
     }
+    @media (max-width: $max-width-small-screen) {
+      padding: 0 16px;
+
+      &:first-child {
+        padding: 0 44px;
+      }
+    }
   }
 }
 
@@ -71,7 +78,6 @@ $m-small: 16px;
 
     color: $c-white;
     text-align: right;
-    margin: 32px;
     font-size: 18px;
   }
 }
