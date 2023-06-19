@@ -25,7 +25,7 @@ export const TableWithBooks = ({ books }: { books: BooksListProps }) => {
       </thead>
 
       {books.map((book) => (
-        <TableRow book={book} keyId={book.id} />
+        <TableRow book={book} key={book.id} />
       ))}
     </table>
   );

@@ -2,18 +2,15 @@ import { useState } from "react";
 
 import { Button } from "../Button";
 import { isMobile } from "../../utils/isMobile";
-import { BookProps } from "../../types";
+import { TableRowsProps } from "../../types/TableRowsProps";
+
 
 import IconArrow from "../../assets/icon-arrow.svg";
 import "./TableRowStyle.scss";
 
-export const TableRow = ({
-  book,
-  keyId,
-}: {
-  book: BookProps;
-  keyId: string;
-}) => {
+
+export const TableRow = ({ props, book }: TableRowsProps) => {
+
   const [isOpenDescription, setIsOpenDescription] = useState(false);
 
   const authors = book.authors?.join("; ");
@@ -98,7 +95,7 @@ export const TableRow = ({
 
   return (
     <tbody className={isOpenDescription ? "opened_row" : "closed_row"}>
-      <tr key={keyId} className={isOpenDescription ? "opened_arrow" : "arrow"}>
+      <tr {...props} className={isOpenDescription ? "opened_arrow" : "arrow"}>
         <td>
           <img src={IconArrow} alt="arrow" />
         </td>
