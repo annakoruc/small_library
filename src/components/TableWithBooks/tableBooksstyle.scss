@@ -1,20 +1,7 @@
 @import "../../styles/variables.scss";
 
 .table_books {
-  width: 100%;
-  height: 100%;
-  border: 1px solid $c-green-default;
-  border-collapse: collapse;
-
-  thead {
-    height: 50px;
-    background-color: $c-green-default;
-
-    color: $c-white;
-    text-align: right;
-    margin: 32px;
-    font-size: 18px;
-  }
+  @include table_style;
 
   .hearder_row {
     @include row_style;

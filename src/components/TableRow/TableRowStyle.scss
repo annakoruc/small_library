@@ -25,6 +25,9 @@ tbody {
   &:nth-child(odd) {
     background-color: $c-light-gray;
   }
+  &:hover {
+    background-color: $c-green-light;
+  }
 }
 
 .opened_row {

@@ -6,8 +6,8 @@ export const HomePage = () => {
     <div className="home_page">
       <h3>Select the range of authors to display:</h3>
       <div className="buttons">
-        <Button link="polish-authors" title="Polish" />
-        <Button link="international-authors" title="International" />
+        <Button link="polish-authors" title="Polish Authors" />
+        <Button link="international-authors" title="International  Authors" />
       </div>
     </div>
   );
