@@ -7,9 +7,21 @@
 
   .header_content {
     @include desktop_screen_margin;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: $max-width-small-screen) {
+    height: auto;
+
+    .header_content {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px;
+    }
   }
 }
 
