@@ -15,7 +15,7 @@
 
 ![image](https://github.com/annakoruc/small_library/assets/95089940/fffd0bb1-69b5-484e-a879-c06fba79f8b8)
 
-An application to display books by authors from a specified list. Selectable list with Polish authors and international authors. 
+An application to display books by authors from a specified list downloaded from Google Book API. Selectable list with Polish authors and international authors. 
 
 You can:
 - selection of Polish or international authors
