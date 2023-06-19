@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=News+Cycle:wght@400;700&display=swap");
+
+/// colors
+$c-white: #ffffff;
+$c-black: #1b0b19;
+$c-light-gray: #f6f6f6;
+
+$c-green-light: #effcf6;
+$c-green-default: #52d87e;
+$c-green-dark: #067e2e;
+
+// fonts
+$f-font-family: News Cycle;
+$f-font-logo: Inter;
+$f-defautl-weight: 400;
+$f-bold-weight: 700;
+
+@mixin author_title {
+  font-weight: $f-bold-weight;
+  font-size: 30px;
+}
+
+//margins
+
+$m-big: 120px;
+$m-medium: 32px;
+$m-small: 16px;
+
+@mixin desktop_screen_margin {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+@mixin flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex_row_all_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin row_style {
+  height: 50px;
+  text-align: right;
+
+  td,
+  th {
+    padding: 0 32px;
+
+    &:first-child {
+      text-align: left;
+      padding: 0 60px;
+      width: 70%;
+    }
+    @media (max-width: $max-width-small-screen) {
+      padding: 0 16px;
+
+      &:first-child {
+        padding: 0 44px;
+      }
+    }
+  }
+}
+
+@mixin table_style {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $c-green-default;
+  border-collapse: collapse;
+
+  thead {
+    height: 50px;
+    background-color: $c-green-default;
+
+    color: $c-white;
+    text-align: right;
+    font-size: 18px;
+  }
+}
+
+//response
+
+$max-width-small-screen: 700px;

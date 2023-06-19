@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { BooksProps } from "../../types";
+import { BooksListProps } from "../../types";
 
 type StateProps = {
   loading: boolean;
-  books: BooksProps;
+  books: BooksListProps;
 };
 
 const initialState: StateProps = { loading: false, books: [] };
@@ -15,7 +15,9 @@ export const getDataFromApi = createAsyncThunk(
     const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:"${author}"&maxResults=40`;
 
     const res = await axios.get(url).then((res) => {
-      const booksArray: BooksProps = [];
+      const booksArray: BooksListProps = [];
+      console.log(res.data.totalItems);
+
       const listOfBookFromApi = res.data.items;
 
       for (const book of listOfBookFromApi) {
@@ -29,6 +31,8 @@ export const getDataFromApi = createAsyncThunk(
           description: bookInfo.description,
           link: bookInfo.previewLink,
           pageCount: bookInfo.pageCount,
+          subtitle: bookInfo.subtitle,
+          language: bookInfo.language,
         });
       }
 
@@ -58,5 +62,4 @@ const booksSlice = createSlice({
   },
 });
 
-// export const {} = booksSlice.actions;
 export default booksSlice.reducer;

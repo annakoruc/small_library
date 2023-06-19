@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Route, Routes } from "react-router-dom";
 import {
   AuthorsBooks,
@@ -10,11 +8,12 @@ import {
 } from "./pages";
 import { RootLayout, TableLayouts } from "./pages/layouts";
 
+import "./styles/global.scss";
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<RootLayout />}>
-        //TODO add something to homepage
         <Route index element={<HomePage />} />
         <Route path="polish-authors" element={<TableLayouts />}>
           <Route index element={<PolishAuthors />} />

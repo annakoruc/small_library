@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.table_books {
+  @include table_style;
+
+  .hearder_row {
+    @include row_style;
+  }
+}

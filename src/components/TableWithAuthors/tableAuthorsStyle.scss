@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.authors {
+  @include table_style;
+  width: 80%;
+  margin: auto;
+
+  .hearder_row {
+    text-align: left;
+    th {
+      padding: 0 32px;
+    }
+  }
+
+  .table_rows {
+    height: 50px;
+
+    &:nth-child(odd) {
+      background-color: $c-light-gray;
+    }
+
+    &:hover {
+      background-color: $c-green-light;
+    }
+
+    td {
+      padding: 0 32px;
+    }
+  }
+
+  @media (max-width: $max-width-small-screen) {
+    width: 100%;
+  }
+}

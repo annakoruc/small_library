@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { ArrayOfAutorsProps } from "../types/ArrayOfAutorsProps";
+
+import { ArrayOfAutorsProps } from "../../types/ArrayOfAutorsProps";
+
+import "./tableAuthorsStyle.scss";
 
 export const TableWithAuthors = ({
   authors,
@@ -9,24 +12,26 @@ export const TableWithAuthors = ({
   const navigate = useNavigate();
 
   return (
-    <table>
+    <table className="authors">
       <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>surname</th>
+        <tr className="hearder_row">
+          <th>Name</th>
+          <th>Surname</th>
         </tr>
       </thead>
       <tbody>
         {authors.map((author) => (
           <tr
-            key={authors.indexOf(author)}
+            key={author.id}
             onClick={() => {
               navigate(`${author.name}+${author.surname}`);
             }}
+            className="table_rows"
           >
             <td>{author.name}</td>
-            <td>{author.surname}</td>
+            <td>
+              <b>{author.surname}</b>
+            </td>
           </tr>
         ))}
       </tbody>

@@ -4,10 +4,13 @@ import { Button } from "../Button";
 import { isMobile } from "../../utils/isMobile";
 import { TableRowsProps } from "../../types/TableRowsProps";
 
+
 import IconArrow from "../../assets/icon-arrow.svg";
 import "./TableRowStyle.scss";
 
+
 export const TableRow = ({ props, book }: TableRowsProps) => {
+
   const [isOpenDescription, setIsOpenDescription] = useState(false);
 
   const authors = book.authors?.join("; ");
