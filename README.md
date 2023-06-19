@@ -1,45 +1,63 @@
-usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
+<div align="center">
+   <h1 >Small Library</h1>
+  <h3>
+    <a href="https://warm-duckanoo-146dd5.netlify.app">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://www.figma.com/file/dBEfXeA3Jt3mD41KIqtqFk/Small-library?type=design&node-id=0%3A1&t=tzbsW6O5bwUAllyo-1">
+      Figma
+    </a>
+  </h3>
+</div>
 
-These are common Git commands used in various situations:
+## Overview
 
-start a working area (see also: git help tutorial)
-   clone     Clone a repository into a new directory
-   init      Create an empty Git repository or reinitialize an existing one
+![image](https://github.com/annakoruc/small_library/assets/95089940/fffd0bb1-69b5-484e-a879-c06fba79f8b8)
 
-work on the current change (see also: git help everyday)
-   add       Add file contents to the index
-   mv        Move or rename a file, a directory, or a symlink
-   restore   Restore working tree files
-   rm        Remove files from the working tree and from the index
+An application to display books by authors from a specified list. Selectable list with Polish authors and international authors. 
 
-examine the history and state (see also: git help revisions)
-   bisect    Use binary search to find the commit that introduced a bug
-   diff      Show changes between commits, commit and working tree, etc
-   grep      Print lines matching a pattern
-   log       Show commit logs
-   show      Show various types of objects
-   status    Show the working tree status
+You can:
+- selection of Polish or international authors
+- navbar with bredcrumb navigation
+- list of books with title, number of pages, language, publication date
+- after selecting a book: subtitle, authors, description and a button with redirection to the book page on google API.
+- RWD
 
-grow, mark and tweak your common history
-   branch    List, create, or delete branches
-   commit    Record changes to the repository
-   merge     Join two or more development histories together
-   rebase    Reapply commits on top of another base tip
-   reset     Reset current HEAD to the specified state
-   switch    Switch branches
-   tag       Create, list, delete or verify a tag object signed with GPG
 
-collaborate (see also: git help workflows)
-   fetch     Download objects and refs from another repository
-   pull      Fetch from and integrate with another repository or a local branch
-   push      Update remote refs along with associated objects
+### Built With
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+- [Vite](https://vitejs.dev/)
+- [React](https://www.reactjs.org)
+- [Typescript](https://www.typescriptlang.org/)
+- [Redux-Toolkit](https://redux-toolkit.js.org/)
+- [SCSS](https://sass-lang.com/)
+- [Axios](https://axios-http.com/docs/intro)
+
+### Support tools
+- [Google Books API](https://developers.google.com/books?hl=pl)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Netlify](https://www.netlify.com/)
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/annakoruc/small_library.git
+
+# Install dependencies
+$ npm install
+
+# run the development server
+$ npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+## Contact
+
+
+- Github - [Anna Koruc](https://github.com/annakoruc)
+- Linkedin - [@annakoruc](https://www.linkedin.com/in/anna-koruc-043ba01b6/)
+
