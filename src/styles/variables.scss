@@ -24,7 +24,7 @@ $f-bold-weight: 700;
 
 $m-big: 120px;
 $m-medium: 32px;
-$m-small: 16;
+$m-small: 16px;
 
 @mixin desktop_screen_margin {
   max-width: 1440px;
@@ -42,3 +42,40 @@ $m-small: 16;
   align-items: center;
   justify-content: center;
 }
+
+@mixin row_style {
+  height: 50px;
+  text-align: right;
+
+  td,
+  th {
+    padding: 0 32px;
+
+    &:first-child {
+      text-align: left;
+      padding: 0 60px;
+      width: 70%;
+    }
+  }
+}
+
+@mixin table_style {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $c-green-default;
+  border-collapse: collapse;
+
+  thead {
+    height: 50px;
+    background-color: $c-green-default;
+
+    color: $c-white;
+    text-align: right;
+    margin: 32px;
+    font-size: 18px;
+  }
+}
+
+//response
+
+$max-width-small-screen: 700px;
