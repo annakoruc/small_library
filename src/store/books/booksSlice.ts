@@ -16,11 +16,12 @@ export const getDataFromApi = createAsyncThunk(
 
     const res = await axios.get(url).then((res) => {
       const booksArray: BooksListProps = [];
+      console.log(res.data.totalItems);
+
       const listOfBookFromApi = res.data.items;
 
       for (const book of listOfBookFromApi) {
         const bookInfo = book.volumeInfo;
-        console.log(bookInfo);
 
         booksArray.push({
           id: book.id,
@@ -61,5 +62,4 @@ const booksSlice = createSlice({
   },
 });
 
-// export const {} = booksSlice.actions;
 export default booksSlice.reducer;

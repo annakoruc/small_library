@@ -1,12 +1,14 @@
+import { useId } from "react";
+import { TableRow } from "../TableRow";
 import { BooksListProps } from "../../types";
 import { isMobile } from "../../utils/isMobile";
-import { TableRow } from "../TableRow";
 
 import "./tableBooksstyle.scss";
 
 export const TableWithBooks = ({ books }: { books: BooksListProps }) => {
+  const reactId = useId();
   return (
-    <table className="table_books">
+    <table className="table_books" key={reactId}>
       <thead>
         {isMobile ? (
           <tr className="hearder_row">
@@ -21,8 +23,9 @@ export const TableWithBooks = ({ books }: { books: BooksListProps }) => {
           </tr>
         )}
       </thead>
+
       {books.map((book) => (
-        <TableRow book={book} key={book.id} />
+        <TableRow book={book} keyId={book.id} />
       ))}
     </table>
   );

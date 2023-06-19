@@ -1,102 +1,118 @@
 import { useState } from "react";
-import { BookProps } from "../../types";
 
-import "./TableRowStyle.scss";
-import IconArrow from "../../assets/icon-arrow.svg";
 import { Button } from "../Button";
 import { isMobile } from "../../utils/isMobile";
+import { BookProps } from "../../types";
 
-export const TableRow = ({ book, key }: { book: BookProps; key: string }) => {
+import IconArrow from "../../assets/icon-arrow.svg";
+import "./TableRowStyle.scss";
+
+export const TableRow = ({
+  book,
+  keyId,
+}: {
+  book: BookProps;
+  keyId: string;
+}) => {
   const [isOpenDescription, setIsOpenDescription] = useState(false);
 
   const authors = book.authors?.join("; ");
+  const pages = book.pageCount ? book.pageCount : "not stated";
+  const language = book.language.toUpperCase();
 
   const setIsOpen = () => {
     setIsOpenDescription(!isOpenDescription);
   };
 
+  const mobileContent = {
+    header: (
+      <tr onClick={setIsOpen} className="book_row">
+        <td>
+          <b>{book.title}</b>
+        </td>
+      </tr>
+    ),
+    rows: (
+      <div>
+        {book.subtitle && (
+          <p>
+            <span>Subtitle: </span> {book.subtitle}
+          </p>
+        )}
+        {book.authors && (
+          <p>
+            <span>Authors: </span> {authors}
+          </p>
+        )}
+        <p>
+          <span>Published: </span> {book.publishedDate}
+        </p>
+        <p>
+          <span>Pages: </span>
+          {pages}
+        </p>
+        <p>
+          <span>Language: </span>
+          {language}
+        </p>
+        {book.description && (
+          <p>
+            <span>Description: </span> {book.description}
+          </p>
+        )}
+      </div>
+    ),
+  };
+
+  const desktopContent = {
+    header: (
+      <tr onClick={setIsOpen} className="book_row">
+        <td>
+          <b>{book.title}</b>
+        </td>
+        <td>{pages}</td>
+        <td>{language}</td>
+        <td>{book.publishedDate}</td>
+      </tr>
+    ),
+    rows: (
+      <div>
+        {book.subtitle && (
+          <p>
+            <span>Subtitle: </span> {book.subtitle}
+          </p>
+        )}
+        {book.authors && (
+          <p>
+            <span>Authors: </span> {authors}
+          </p>
+        )}
+        {book.description && (
+          <p>
+            <span>Description: </span> {book.description}
+          </p>
+        )}
+      </div>
+    ),
+  };
+
   return (
-    <tbody
-      key={key}
-      className={isOpenDescription ? "opened_row" : "closed_row"}
-    >
-      <tr className={isOpenDescription ? "opened_arrow" : "arrow"}>
+    <tbody className={isOpenDescription ? "opened_row" : "closed_row"}>
+      <tr key={keyId} className={isOpenDescription ? "opened_arrow" : "arrow"}>
         <td>
           <img src={IconArrow} alt="arrow" />
         </td>
       </tr>
-      {isMobile ? (
-        <tr onClick={setIsOpen} className="book_row">
-          <td>
-            <b>{book.title}</b>
-          </td>
-        </tr>
-      ) : (
-        <tr onClick={setIsOpen} className="book_row">
-          <td>
-            <b>{book.title}</b>
-          </td>
-
-          <td>{book.pageCount ? book.pageCount : "not stated"}</td>
-          <td>{book.language.toUpperCase()}</td>
-          <td>{book.publishedDate}</td>
-        </tr>
-      )}
-
+      {isMobile ? mobileContent.header : desktopContent.header}
       {isOpenDescription && (
-        <td colSpan={4}>
-          <div className="hidden_row">
-            {isMobile ? (
-              <div>
-                {book.subtitle && (
-                  <p>
-                    <span>Subtitle: </span> {book.subtitle}
-                  </p>
-                )}
-                {book.authors && (
-                  <p>
-                    <span>Authors: </span> {authors}
-                  </p>
-                )}
-                <p>
-                  <span>Published: </span> {book.publishedDate}
-                </p>
-                <p>
-                  <span>Pages: </span>
-                  {book.pageCount ? book.pageCount : " not stated"}
-                </p>
-                <p>
-                  <span>Language: </span>
-                  {book.language.toUpperCase()}
-                </p>
-                {book.description && (
-                  <p>
-                    <span>Description: </span> {book.description}
-                  </p>
-                )}
-              </div>
-            ) : (
-              <div>
-                {book.subtitle && (
-                  <p>
-                    <span>Subtitle: </span> {book.subtitle}
-                  </p>
-                )}
-                {book.authors && (
-                  <p>
-                    <span>Authors: </span> {authors}
-                  </p>
-                )}
-                {book.description && (
-                  <p>
-                    <span>Description: </span> {book.description}
-                  </p>
-                )}
-              </div>
-            )}
-            <Button link={book.link} title="go to Google Book" />
-          </div>
-        </td>
+        <tr>
+          <td colSpan={4}>
+            <div className="hidden_row">
+              {isMobile ? mobileContent.rows : desktopContent.rows}
+              <Button link={book.link} title="go to Google Book" />
+            </div>
+          </td>
+        </tr>
       )}
     </tbody>
   );

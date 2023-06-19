@@ -17,6 +17,16 @@ tbody {
   .book_row {
     @include row_style;
   }
+
+  @media (max-width: $max-width-small-screen) {
+    .arrow {
+      padding-left: 16px;
+    }
+
+    .opened_arrow {
+      padding-right: 16px;
+    }
+  }
 }
 
 .closed_row {
@@ -44,6 +54,9 @@ tbody {
 
     span {
       font-weight: $f-bold-weight;
+    }
+    @media (max-width: $max-width-small-screen) {
+      padding: 0 32px 16px 32px;
     }
   }
 }

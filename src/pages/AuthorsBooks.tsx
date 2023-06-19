@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { FallingLines } from "react-loader-spinner";
 
 import { AppDispatch, RootState } from "../store";
 import { getDataFromApi } from "../store/books/booksSlice";
@@ -24,7 +25,11 @@ export const AuthorsBooks = () => {
   return (
     <>
       <h1>{author}</h1>
-      {loading ? <div>Loading</div> : <TableWithBooks books={books} />}
+      {loading ? (
+        <FallingLines color="#52d87e" width="100" visible={true} />
+      ) : (
+        <TableWithBooks books={books} />
+      )}
     </>
   );
 };

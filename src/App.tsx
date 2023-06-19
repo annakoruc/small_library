@@ -14,7 +14,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<RootLayout />}>
-        //TODO add something to homepage
         <Route index element={<HomePage />} />
         <Route path="polish-authors" element={<TableLayouts />}>
           <Route index element={<PolishAuthors />} />

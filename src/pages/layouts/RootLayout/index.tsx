@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { BreadCrumbs } from "../../../components";
+
+import { BreadCrumbs, Logo } from "../../../components";
 
 import "./rootStyle.scss";
-import { Logo } from "../../../components/Logo";
 
 export const RootLayout = () => {
   return (
