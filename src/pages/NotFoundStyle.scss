@@ -1,0 +1,11 @@
+@import "../styles/variables.scss";
+
+.not_found {
+  @include flex_column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+}
