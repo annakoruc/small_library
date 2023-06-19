@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+
 import { ArrayOfAutorsProps } from "../../types/ArrayOfAutorsProps";
 
 import "./tableAuthorsStyle.scss";
@@ -21,7 +22,7 @@ export const TableWithAuthors = ({
       <tbody>
         {authors.map((author) => (
           <tr
-            key={authors.indexOf(author)}
+            key={author.id}
             onClick={() => {
               navigate(`${author.name}+${author.surname}`);
             }}

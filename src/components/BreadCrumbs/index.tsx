@@ -1,11 +1,12 @@
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import homeIcon from "../../assets/icon-home.svg";
 
+import homeIcon from "../../assets/icon-home.svg";
 import "./bredcrumbsStyle.scss";
 
 export const BreadCrumbs = () => {
   const location = useLocation();
+  console.log(location.pathname);
 
   let currentLink = "";
 
