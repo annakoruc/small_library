@@ -6,11 +6,13 @@ import "./bredcrumbsStyle.scss";
 
 export const BreadCrumbs = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  console.log(decodeURI(location.pathname));
 
   let currentLink = "";
 
-  const crumbs = location.pathname.split("/").filter((crumb) => crumb !== "");
+  const crumbs = decodeURI(location.pathname)
+    .split("/")
+    .filter((crumb) => crumb !== "");
 
   return (
     <div className="breadcrumbs">
