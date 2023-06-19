@@ -21,10 +21,11 @@ export const BreadCrumbs = () => {
       </Link>
       {crumbs.map((crumb) => {
         currentLink += `/${crumb}`;
+        const linkName = crumb.replace(/[-+]/g, " ");
 
         return (
           <Link className="crumb" key={crumb} to={currentLink}>
-            {crumb}
+            {linkName}
           </Link>
         );
       })}
